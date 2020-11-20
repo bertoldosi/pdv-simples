@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PDV</title>
+</head>
+<body style="text-align: center"><br>
+    <form method = "post">{% csrf_token %}
+        <label>
+            Nome:
+            <input name="nome" required>
+        </label>
+        <label>
+            Quantidade
+            <input name="quantidade" required>
+        </label>
+        <button type="submit" >Add</button>
+    </form>
+    <br>
+    <br>
+
+    {%  for i in object_list %}
+        Nome: {{ i.nome }}<br>
+        Quantidade: {{ i.quantidade }}<br><br>
+    {% endfor %}
+
+</body>
+</html>
